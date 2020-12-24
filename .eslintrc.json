@@ -1,0 +1,42 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    // --- Typescript ---
+    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
+    "@typescript-eslint/explicit-function-return-type": ["error"],
+    "@typescript-eslint/explicit-module-boundary-types": [
+      "error",
+      { "allowArgumentsExplicitlyTypedAsAny": true }
+    ],
+    "@typescript-eslint/indent": ["error", 4],
+    "@typescript-eslint/no-empty-function": ["off"],
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "@typescript-eslint/semi": ["error"],
+    "@typescript-eslint/space-before-function-paren": ["error"],
+    // We need to disable default ESLint rules that we override
+    "indent": "off",
+    "no-empty-function": "off",
+    "semi": "off",
+    "space-before-function-paren": "off",
+
+    // --- Javascript ---
+    // https://eslint.org/docs/rules/
+    "comma-dangle": ["error", "never"],
+    "key-spacing": ["error", { "mode": "strict" }],
+    "no-trailing-spaces": ["error"],
+    "object-curly-spacing": ["error", "always"]
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}
